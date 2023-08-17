@@ -2,3 +2,19 @@
 .h1 {
     font-size: 5rem;
 }
+
+// Button
+.button {
+    font-size: 2rem;
+    padding: 1rem;
+    color: $white;
+    background-color: $black;
+    border-radius: 5px;
+}
+
+// Inputs
+.input-text {
+    font-size: 2rem;
+    padding: .5rem;
+    border-radius: 5px;
+}
