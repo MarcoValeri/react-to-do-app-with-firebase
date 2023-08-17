@@ -1,24 +1,27 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import './AddTask.scss';
 
 const AddTask = props => {
 
-    const tasks = [
-        'Create React App',
-        'Cypress for testing',
-        'Code email template'
-    ];
+    // State
+    const [task, setTask] = useState();
 
-    useEffect(() => {
-        props.setAllTasks(tasks);
-    }, []);
+    // Handler
+    const formSubmitHandler = e => {
+        e.preventDefault();
+        props.onAddTask(task);
+    }
+
+    const taskInputChangeHandler = e => {
+        setTask(e.target.value);
+    }
 
     return (
         <div className="add-task">
             <div>
-                <form className="add-task__form">
+                <form className="add-task__form" onSubmit={formSubmitHandler}>
                     <div className="add-task__form-container-add-task">
-                        <input className="add-task__input-text input-text" type="text" placeholder="Add Task" />
+                        <input className="add-task__input-text input-text" type="text" placeholder="Add Task" onChange={taskInputChangeHandler} />
                     </div>
                     <div className="add-task__form-container-submit">
                         <button className="button" type="submit">Add Task</button>

@@ -9,12 +9,17 @@ import { useState } from 'react';
 const App = () => {
 
     // State
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(['Node', 'React']);
+
+    // Handler
+    const addTaskClickHandler = getAllTasks => {
+        setTasks([...getAllTasks]);
+    }
 
     return (
         <>
             <Nav />
-            <AddTask setAllTasks={setTasks} />
+            <AddTask onAddTask={addTaskClickHandler} />
             <ShowTasks  allTasks={tasks} />
         </>
     );
