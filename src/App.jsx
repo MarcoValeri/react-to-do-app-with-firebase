@@ -12,8 +12,8 @@ const App = () => {
     const [tasks, setTasks] = useState(['Node', 'React']);
 
     // Handler
-    const addTaskClickHandler = getAllTasks => {
-        setTasks([...getAllTasks]);
+    const addTaskClickHandler = getTask => {
+        setTasks(current => [...current, getTask]);
     }
 
     return (

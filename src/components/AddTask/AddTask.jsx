@@ -10,6 +10,7 @@ const AddTask = props => {
     const formSubmitHandler = e => {
         e.preventDefault();
         props.onAddTask(task);
+        console.log(`Form submitted: ${task}`);
     }
 
     const taskInputChangeHandler = e => {
