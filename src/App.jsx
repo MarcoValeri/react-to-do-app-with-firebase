@@ -9,7 +9,7 @@ import { useState } from 'react';
 const App = () => {
 
     // State
-    const [tasks, setTasks] = useState(['Node', 'React']);
+    const [tasks, setTasks] = useState([]);
 
     // Handler
     const addTaskClickHandler = getTask => {

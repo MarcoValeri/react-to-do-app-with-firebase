@@ -9,8 +9,10 @@ const AddTask = props => {
     // Handler
     const formSubmitHandler = e => {
         e.preventDefault();
-        props.onAddTask(task);
-        console.log(`Form submitted: ${task}`);
+        if (task.length > 0) {
+            props.onAddTask(task);
+            setTask('');
+        }
     }
 
     const taskInputChangeHandler = e => {
@@ -22,7 +24,7 @@ const AddTask = props => {
             <div>
                 <form className="add-task__form" onSubmit={formSubmitHandler}>
                     <div className="add-task__form-container-add-task">
-                        <input className="add-task__input-text input-text" type="text" placeholder="Add Task" onChange={taskInputChangeHandler} />
+                        <input className="add-task__input-text input-text" type="text" value={task} placeholder="Add Task" onChange={taskInputChangeHandler} />
                     </div>
                     <div className="add-task__form-container-submit">
                         <button className="button" type="submit">Add Task</button>

@@ -1,3 +1,4 @@
+import Task from '../Task/Task';
 import './ShowTasks.scss';
 
 const ShowTasks = props => {
@@ -8,13 +9,7 @@ const ShowTasks = props => {
                 <h2 className="h2">Task To Do</h2>
             </div>
             <div className="show-tasks__wrapper">
-                {
-                    props.allTasks.map((task, index) =>
-                        <div key={index} className="show-tasks__container-task">
-                            <h3 className="h3">{task}</h3>
-                        </div>
-                    )
-                }
+                {props.allTasks.length > 0 ? props.allTasks.map((task, index) => <Task key={index} taskValue={task} />) : <Task taskValue="No tasks at the moment" />}
             </div>
         </div>
     )
