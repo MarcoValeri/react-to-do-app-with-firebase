@@ -4,20 +4,17 @@ import ShowTasks from './components/ShowTasks/ShowTasks';
 
 import './App.css';
 import './assets/style/main.scss';
+import { useState } from 'react';
 
 const App = () => {
 
-    const tasks = [
-        'Create React App',
-        'Cypress for testing',
-        'Code email template'
-    ];
-
+    // State
+    const [tasks, setTasks] = useState([]);
 
     return (
         <>
             <Nav />
-            <AddTask />
+            <AddTask setAllTasks={setTasks} />
             <ShowTasks  allTasks={tasks} />
         </>
     );

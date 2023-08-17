@@ -1,6 +1,18 @@
+import { useEffect } from 'react';
 import './AddTask.scss';
 
-const AddTask = () => {
+const AddTask = props => {
+
+    const tasks = [
+        'Create React App',
+        'Cypress for testing',
+        'Code email template'
+    ];
+
+    useEffect(() => {
+        props.setAllTasks(tasks);
+    }, []);
+
     return (
         <div className="add-task">
             <div>
